@@ -1,0 +1,6 @@
+{
+  "name": "فرانک فرجی | پلتفرم هوشمند تمرین و تناسب اندام",
+  "description": "برنامه تمرینی اختصاصی، آموزش حرکات ورزشی، برنامه تغذیه و دوره‌های تخصصی فیتنس با تجربه تعاملی و سینمایی لوتوس جیم",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

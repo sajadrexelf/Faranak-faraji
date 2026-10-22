@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>فرانک فرجی | پلتفرم هوشمند تمرین و تناسب اندام</title>
+    <meta
+      name="description"
+      content="برنامه تمرینی شخصیسازیشده، آموزش حرکات ورزشی، برنامه تغذیه و دورههای تخصصی فیتنس با تجربهای تعاملی و سینمایی."
+    />
+    <meta property="og:title" content="فرانک فرجی | پلتفرم هوشمند تمرین و تناسب اندام" />
+    <meta
+      property="og:description"
+      content="برنامه تمرینی شخصیسازیشده، آموزش حرکات ورزشی، برنامه تغذیه و دورههای تخصصی فیتنس با تجربهای تعاملی و سینمایی."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+
+    <!-- Google Fonts: Vazirmatn (فونت استاندارد فارسی) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Three.js و GLTFLoader (نسخه پایدار و هماهنگ CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./styles.css" />
+
+    <!-- Interactive & Scroll Engine Script -->
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <!--
+      پلتفرم هوشمند تمرین و تناسب اندام فرانک فرجی (لوتوس جیم)
+      بخش پنجم: ادغام نهایی، اسلایدر بی‌نهایت برنامه‌ها و هماهنگی کامل ویدیوهای تمرینی
+    -->
+    <main class="site-shell">
+      <section
+        class="cinema-scroll"
+        id="cinema"
+        aria-label="روایت سینمایی تمرینات فیتنس فرانک فرجی"
+      >
+        <div class="stage">
+          <div class="world">
+            <div class="scene-background" aria-hidden="true"></div>
+
+            <!-- صحنه سه‌بعدی و کانواس WebGL -->
+            <div
+              class="fitness-scene"
+              id="fitness-scene"
+              aria-label="صحنه سهبعدی آواتار ورزشی"
+            >
+              <canvas id="fitness-canvas"></canvas>
+            </div>
+
+            <!-- هدر و ناوبری اصلی -->
+            <header
+              class="site-header"
+              aria-label="ناوبری اصلی"
+            >
+              <a class="site-logo" href="#cinema">
+                <span class="logo-symbol">🪷</span>
+                <span class="logo-text">فرانک فرجی</span>
+              </a>
+
+              <nav class="site-nav" aria-label="منوی اصلی">
+                <a href="#cinema">خانه</a>
+                <a href="#chest-shoulders">سینه و سرشانه</a>
+                <a href="#back-lats">پشت و زیر بغل</a>
+                <a href="#core">شکم و عضلات مرکزی</a>
+                <a href="#sights-slider-section">دوره‌ها و برنامه‌ها</a>
+              </nav>
+
+              <button
+                class="language-switcher"
+                type="button"
+                aria-label="تغییر زبان"
+              >
+                <span>فارسی</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </button>
+            </header>
+
+            <!-- لایه همپوشانی اطلاعاتی صحنه (HUD) -->
+            <div class="scene-overlay">
+              <div class="scene-progress" aria-hidden="true">
+                <span class="scene-progress-bar"></span>
+              </div>
+
+              <div class="scene-indicator" aria-live="polite">
+                <span class="scene-number">01</span>
+                <span class="scene-name">سینه و سرشانه</span>
+              </div>
+
+              <div
+                class="muscle-highlight-label"
+                aria-live="polite"
+              >
+                عضلات هدف
+              </div>
+            </div>
+
+            <!-- نشانگر وضعیت بارگذاری صحنه سه‌بعدی -->
+            <div class="scene-loading" id="scene-loading" aria-live="polite">
+              <span>در حال آماده‌سازی تجربه سه‌بعدی...</span>
+            </div>
+
+            <!--
+              اسلایدر بی‌نهایت برنامه‌ها و دوره‌ها (مطابق معماری سند مرجع Jaipur City)
+              پنج کارت پایه که در script.js به ۱۵ کارت تکثیر می‌شوند
+            -->
+            <section
+              class="sights-slider"
+              id="sights-slider"
+              aria-label="اسلایدر برنامه‌های تمرینی فرانک فرجی"
+            >
+              <div class="sights-track" id="sights-track">
+                <!-- کارت ۱: برنامه کاهش وزن -->
+                <article
+                  class="sight-card"
+                  tabindex="0"
+                  role="button"
+                  data-program-id="weight-loss"
+                  aria-label="مشاهده جزئیات برنامه کاهش وزن"
+                >
+                  <span class="sight-kicker">برنامه اختصاصی</span>
+                  <div class="sight-pin" aria-hidden="true">🔥</div>
+                  <h3>برنامه کاهش وزن</h3>
+                  <p>کاهش درصد چربی بدن با حفظ توده عضلانی از طریق تمرینات متابولیک و مدیریت انرژی.</p>
+                </article>
+
+                <!-- کارت ۲: عضله‌سازی و افزایش حجم -->
+                <article
+                  class="sight-card"
+                  tabindex="0"
+                  role="button"
+                  data-program-id="hypertrophy"
+                  aria-label="مشاهده جزئیات دوره عضله‌سازی و افزایش حجم"
+                >
+                  <span class="sight-kicker">هایپرتروفی علمی</span>
+                  <div class="sight-pin" aria-hidden="true">🏋️‍♀️</div>
+                  <h3>عضله‌سازی و افزایش حجم</h3>
+                  <p>تمرکز بر بارگذاری پیشرونده، هایپرتروفی سارکوپلاسمیک و توسعه توان انفجاری عضلات.</p>
+                </article>
+
+                <!-- کارت ۳: تمرینات تخصصی بانوان -->
+                <article
+                  class="sight-card"
+                  tabindex="0"
+                  role="button"
+                  data-program-id="women-fitness"
+                  aria-label="مشاهده جزئیات برنامه تمرینات بانوان"
+                >
+                  <span class="sight-kicker">تناسب و فرم‌دهی</span>
+                  <div class="sight-pin" aria-hidden="true">✨</div>
+                  <h3>تمرینات بانوان</h3>
+                  <p>طراحی ویژه فرم‌دهی عضلات سرینی، باریک‌سازی میان‌تنه و تقویت زنجیره خلفی بدن.</p>
+                </article>
+
+                <!-- کارت ۴: یوگا و انعطاف‌پذیری -->
+                <article
+                  class="sight-card"
+                  tabindex="0"
+                  role="button"
+                  data-program-id="yoga-mobility"
+                  aria-label="مشاهده جزئیات دوره یوگا و انعطاف‌پذیری"
+                >
+                  <span class="sight-kicker">موبیلیتی و آرامش</span>
+                  <div class="sight-pin" aria-hidden="true">🧘‍♀️</div>
+                  <h3>یوگا و انعطاف‌پذیری</h3>
+                  <p>افزایش دامنه حرکتی مفاصل، کشش فاسیاها، ریکاوری سیستم عصبی و تعادل ساختاری.</p>
+                </article>
+
+                <!-- کارت ۵: پیلاتس و کنترل بدن -->
+                <article
+                  class="sight-card"
+                  tabindex="0"
+                  role="button"
+                  data-program-id="pilates-control"
+                  aria-label="مشاهده جزئیات دوره پیلاتس و کنترل بدن"
+                >
+                  <span class="sight-kicker">ثبات مرکزی بدن</span>
+                  <div class="sight-pin" aria-hidden="true">⚡</div>
+                  <h3>پیلاتس و کنترل بدن</h3>
+                  <p>درگیرسازی عضلات عمقی شکم، تصحیح پاسچر و هماهنگی عصبی-عضلانی بدون فشار اضافه بر مفاصل.</p>
+                </article>
+              </div>
+            </section>
+
+            <!-- کنترل‌های اسلایدر (دکمه‌های قبلی و بعدی) -->
+            <div class="sights-controls" id="sights-controls" aria-label="کنترل‌های اسلایدر">
+              <button class="sight-nav sight-prev" type="button" aria-label="برنامه قبلی">→</button>
+              <button class="sight-nav sight-next" type="button" aria-label="برنامه بعدی">←</button>
+            </div>
+          </div>
+
+          <!-- پنل معرفی هیرو -->
+          <section
+            class="Hero-copy"
+            aria-label="معرفی پلتفرم فیتنس"
+          >
+            <p class="hero-eyebrow">
+              تمرین هوشمند، حرکت علمی
+            </p>
+
+            <h1 class="hero-title">
+              بدن خودت را بهتر بشناس
+            </h1>
+
+            <p class="hero-description">
+              برنامه تمرینی و تغذیه متناسب با هدف تو،
+              با تجربهای تعاملی و سینمایی.
+            </p>
+
+            <div class="hero-tags" aria-label="ویژگیهای پلتفرم">
+              <span>تمرین شخصیسازیشده</span>
+              <span>آموزش سهبعدی حرکات</span>
+              <span>برنامه تغذیه</span>
+            </div>
+
+            <a class="hero-cta" href="#programs">
+              شروع تجربه
+            </a>
+          </section>
+
+          <!-- پنل مرحله ۱: سینه و سرشانه همراه با پیش‌نمایش ویدیوی تمرینی هماهنگ -->
+          <section
+            class="story-panel story-panel-chest"
+            id="chest-shoulders"
+            aria-label="تمرینات سینه و سرشانه"
+            data-scene="chest-shoulders"
+          >
+            <span class="story-kicker">مرحله 01</span>
+
+            <h2>سینه و سرشانه</h2>
+
+            <p>
+              حرکت را دنبال کن، عضلات هدف را ببین و
+              اجرای صحیح تمرین را بهتر بشناس.
+            </p>
+
+            <!-- ویدیوی تمرینی هماهنگ با مرحله سینه و بالاتنه -->
+            <div class="exercise-video-box">
+              <video
+                class="exercise-video"
+                id="video-chest"
+                src="/assets/aistudio/From_Klickpin.com-_Copy_this_guide_to_elegant_nail_design_ideas_that_feel_luxe_without_spending_a_fortune_with_beginner-friendly_tips_and_easy_det_675b670e.mp4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="ویدیوی تمرین بالاتنه و شنا سوئدی"
+              ></video>
+              <span class="video-hud-tag">آناتومی فعال: پکتورالیس و دلتوئید</span>
+            </div>
+
+            <div class="muscle-tags">
+              <span>عضلات سینه</span>
+              <span>سرشانه</span>
+              <span>سهسر بازویی</span>
+            </div>
+
+            <div class="exercise-caption">
+              <span class="exercise-name">
+                پرس سینه و شنا سوئدی
+              </span>
+              <span class="exercise-phase">
+                اجرای کنترلشده
+              </span>
+            </div>
+          </section>
+
+          <!-- پنل مرحله ۲: پشت و زیر بغل همراه با ویدیوی روئینگ دمبل آپلودشده -->
+          <section
+            class="story-panel story-panel-back"
+            id="back-lats"
+            aria-label="تمرینات پشت و زیر بغل"
+            data-scene="back-lats"
+          >
+            <span class="story-kicker">مرحله 02</span>
+
+            <h2>پشت و زیر بغل</h2>
+
+            <p>
+              با تغییر زاویه دوربین، درگیری عضلات پشت
+              و زیر بغل را هنگام اجرای حرکت مشاهده کن.
+            </p>
+
+            <!-- ویدیوی تمرینی روئینگ دمبل تک‌خم آپلودشده توسط کاربر با هایلایت صورتی/سایان عضلات پشت -->
+            <div class="exercise-video-box">
+              <video
+                class="exercise-video"
+                id="video-back"
+                src="/assets/aistudio/From_Klickpin.com-_Colorful_Vision_Journal_Ideas_You_Need_Right_Now_3013-pin-id-1108237420837912942_ac979b6f.mp4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="ویدیوی روئینگ دمبل تک‌خم و هایلایت عضلات پشت"
+              ></video>
+              <span class="video-hud-tag">آناتومی فعال: لتیسیموس و متوازی‌الاضلاع</span>
+            </div>
+
+            <div class="muscle-tags">
+              <span>عضلات پشتی</span>
+              <span>زیر بغل</span>
+              <span>ذوزنقهای</span>
+            </div>
+
+            <div class="exercise-caption">
+              <span class="exercise-name">
+                روئینگ دمبل تک‌خم (One-Arm Row)
+              </span>
+              <span class="exercise-phase">
+                تمرکز بر انقباض لت
+              </span>
+            </div>
+          </section>
+
+          <!-- پنل مرحله ۳: شکم و عضلات مرکزی همراه با ویدیوی کرانچ و بارفیکس آپلودشده -->
+          <section
+            class="story-panel story-panel-core"
+            id="core"
+            aria-label="تمرینات شکم و عضلات مرکزی"
+            data-scene="core"
+          >
+            <span class="story-kicker">مرحله 03</span>
+
+            <h2>شکم و عضلات مرکزی</h2>
+
+            <p>
+              حرکت کنترلشده بدن و مشارکت عضلات مرکزی
+              را از زاویهای دقیق و سینمایی دنبال کن.
+            </p>
+
+            <!-- ویدیوی تمرینات مرکزی، پلانک و رولر شکم آپلودشده توسط کاربر -->
+            <div class="exercise-video-box">
+              <video
+                class="exercise-video"
+                id="video-core"
+                src="/assets/aistudio/From_Klickpin.com-_See_these_26_Classy_boho_home_decor_ideas_that_make_everyday_moments_look_more_intentional_memorable_and_beautifully_styled_for_70512c15.mp4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="ویدیوی تمرینات عضلات مرکزی و توان انفجاری"
+              ></video>
+              <span class="video-hud-tag">آناتومی فعال: راست شکمی و ثبات تنه</span>
+            </div>
+
+            <div class="muscle-tags">
+              <span>عضلات شکم</span>
+              <span>عضلات مایل</span>
+              <span>عضلات مرکزی</span>
+            </div>
+
+            <div class="exercise-caption">
+              <span class="exercise-name">
+                رولر شکم و ثبات ایزومتریک
+              </span>
+              <span class="exercise-phase">
+                ثبات و کنترل ستون فقرات
+              </span>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- بخش کارت‌های فلش‌کارت دوره‌های آموزشی و مربیگری -->
+      <section
+        class="programs-section"
+        id="programs"
+        aria-label="برنامههای تمرینی"
+      >
+        <div class="programs-heading">
+          <span>قدم بعدی</span>
+          <h2>برنامه مناسب هدف خودت را انتخاب کن</h2>
+          <p>
+            مسیر تمرینی، برنامه تغذیه و دوره موردنظرت را در کارت‌های فلش‌کارت آموزشی زیر بررسی کن.
+          </p>
+        </div>
+
+        <div class="programs-placeholder">
+          <!-- کارت ۱: تمرینات اختصاصی و قدرتی -->
+          <article class="program-card">
+            <div class="program-card-media">
+              <img
+                src="/assets/aistudio/Screenshot_2026-10-22-08-11-21-346_com.android.chrome_6a859866.jpg"
+                alt="فلش کارت دوره تمرینات قدرتی و هایپرتروفی"
+                class="program-card-img"
+                loading="lazy"
+              />
+              <span class="program-badge">دوره جامع</span>
+            </div>
+            <div class="program-card-body">
+              <h3>عضله‌سازی و فرم‌دهی تخصصی</h3>
+              <p>مسیر تمرینی علمی با بارگذاری پیشرونده برای افزایش چگالی عضلانی و تناسب اندام.</p>
+              <div class="program-meta">
+                <span>🏋️‍♀️ ۴ روز در هفته</span>
+                <span>⏱️ ۶۰ دقیقه</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- کارت ۲: تمرینات مرکزی و استقامت تنه -->
+          <article class="program-card">
+            <div class="program-card-media">
+              <img
+                src="/assets/aistudio/Screenshot_2026-10-22-10-04-29-392_com.android.chrome_34b66ef4.jpg"
+                alt="فلش کارت تمرینات عضلات مرکزی و پلانک"
+                class="program-card-img"
+                loading="lazy"
+              />
+              <span class="program-badge">سطح متوسط/پیشرفته</span>
+            </div>
+            <div class="program-card-body">
+              <h3>تقویت عضلات مرکزی و ثبات ستون فقرات</h3>
+              <p>تمرینات کنترل تنه، پلانک‌های ایزومتریک و باریک‌سازی میان‌تنه با هدایت فرانک فرجی.</p>
+              <div class="program-meta">
+                <span>🔥 چربی‌سوزی هدفمند</span>
+                <span>⚡ بدون نیاز به دستگاه</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- کارت ۳: برنامه تغذیه هوشمند و رژیم پایدار -->
+          <article class="program-card">
+            <div class="program-card-media">
+              <img
+                src="/assets/aistudio/ChatGPT_Image_Sep_23__2026__12_16_16_PM_1baba08f.png"
+                alt="فلش کارت برنامه تغذیه هوشمند"
+                class="program-card-img"
+                loading="lazy"
+              />
+              <span class="program-badge">تغذیه و لایف‌استایل</span>
+            </div>
+            <div class="program-card-body">
+              <h3>تغذیه ورزشی و سلامت لوتوس</h3>
+              <p>رژیم غذایی شخصی‌سازی‌شده بر پایه کالری‌شماری هوشمند، درشت‌مغذی‌ها و سازگار با برنامه تمرینی.</p>
+              <div class="program-meta">
+                <span>🥗 برنامه غذایی هفتگی</span>
+                <span>🥑 محاسبه کالری اختصاصی</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- مودال جزئیات برنامه انتخابی اسلایدر (Program Detail Modal) -->
+      <div class="program-modal-backdrop" id="program-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="program-modal-content">
+          <button class="modal-close-btn" type="button" aria-label="بستن پنجره">✕</button>
+          <div class="modal-header">
+            <span class="modal-kicker" id="modal-kicker">دوره تخصصی</span>
+            <h2 id="modal-title">عنوان برنامه</h2>
+          </div>
+          <div class="modal-body">
+            <p id="modal-desc">توضیحات تفصیلی برنامه در این بخش نمایش داده می‌شود.</p>
+            <div class="modal-stats">
+              <div class="stat-pill">
+                <span class="stat-label">تعداد جلسات:</span>
+                <span class="stat-val" id="modal-sessions">۴ جلسه در هفته</span>
+              </div>
+              <div class="stat-pill">
+                <span class="stat-label">سطح آمادگی:</span>
+                <span class="stat-val" id="modal-level">مقدماتی تا پیشرفته</span>
+              </div>
+              <div class="stat-pill">
+                <span class="stat-label">تمرکز آناتومیک:</span>
+                <span class="stat-val" id="modal-focus">کل بدن و زنجیره حرکتی</span>
+              </div>
+            </div>
+            <div class="modal-cta-box">
+              <a href="#cinema" class="modal-action-btn" id="modal-action">مشاهده آناتومی ۳بعدی تمرینات</a>
+              <span class="modal-note">* این برنامه بر اساس ارزیابی هوشمند اختصاصی شما شخصیسازی می‌شود.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
